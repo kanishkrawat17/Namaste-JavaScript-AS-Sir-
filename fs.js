@@ -27,6 +27,12 @@ let obj = {
 
 let keysArr = Object.keys(obj);
 console.log(keysArr);
+// way-1
+for(let  i = 0 ; i < keysArr.length ; i++){
+  
+    console.log(obj[keysArr[i]]);
+}
+// way-2
 for(let key in obj){
     console.log(obj[key]);
 }
