@@ -22,4 +22,4 @@ let htmlData = fs.readFileSync("index.html","UTF-8");
 let myDoc = cheerio.load(htmlData);
 let h1Text = myDoc("h1").text();
 console.log(h1Text);
-
+console.log(h1Text);
