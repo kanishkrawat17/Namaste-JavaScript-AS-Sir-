@@ -1,22 +1,21 @@
-let person = {
+let person1 = {
     firstName : "Kanishk",
-    lastName : "Rawat"
+    lastName : "Rawat",
 }
 
+ function fullname(city,age){
+    console.log(this.firstName+" "+this.lastName+ " "+ city+ " "+age);
+}
 let person2 = {
     firstName : "Rahul",
     lastName : "Dravid"
 }
 
-function fullName(city,age){
-    console.log(this.firstName+" "+this.lastName+ city+ " "+age);
-}
-
 //-------------- call ------------------
 // Function Borrowing -> Borrwing functions from other objects using call , if that function is initalized in other object
  
-// fullName.call(person," Delhi",21);
-// fullName.call(person2, " Bangalore",40);
+// fullName.call(person1 ," Delhi", 21);
+// fullName.call(person2 , " Bangalore" , 40);
 
 //-------------- apply ------------------
 // console.log("In Apply method");
