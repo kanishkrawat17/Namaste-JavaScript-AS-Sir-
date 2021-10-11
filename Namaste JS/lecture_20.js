@@ -11,6 +11,30 @@ function hihghOrderFunc(cb){
 }
 hihghOrderFunc(func1)();
 
+
+// -------------------------------js-info-----------------------------------------
+//  ex:
+//hof -> are those functions which accepts function as an parameter, they can also return  function 
+
+// hof
+function getDetails(email, city, cb){   // cb is callback -> thats goes as argument
+    let details ={};
+    details.email = email;
+    details.city = city;
+
+    cb(details)
+    return function(){
+        console.log(details);
+    }
+
+}
+
+getDetails( "abc@gmail.com", "Delhi", function (details){
+console.log(details);
+})()
+
+
+
 //   ----------------------------------
 
 // const radius = [1,2,3,4,5];
@@ -77,4 +101,3 @@ hihghOrderFunc(func1)();
 // console.log(calculate(radius, calcArea));
 // console.log(calculate(radius, calcDiameter));
 // console.log(calculate(radius, calcCircumference));
-
