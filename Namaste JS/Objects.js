@@ -31,7 +31,7 @@ arr.showDetails(); // array also has access to person2's function shwoDetails si
 
 
 
-// ************ NOTES ****************
+// ****************** NOTES ****************SOURCE-PEPCODING,AKSHAY_SAINI*************************
 
 // Every array, function, object has a prototype which has some methods which can be accessed .
 //  person1.__proto__ = Object.prototype; // person1 is object._
