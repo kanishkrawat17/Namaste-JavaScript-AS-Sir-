@@ -1,14 +1,12 @@
 // Hoisting - The phenomenon by which we can access function and variables before even initializing them
 
-// const { add } = require("cheerio/lib/api/traversing");
-
 // Hoisting-1
-// var x = 5;
-// test();
-// console.log(x);
-// function test(){
-//     console.log("test is called");
-// }
+var x = 5;
+test();
+console.log(x);
+function test(){
+    console.log("test is called");
+}
 
 //-----------------------------------------------
 
@@ -24,17 +22,17 @@
 //-----------------------------------------------
 
 //Hoisting in arrow function
-// getName();  //In this caee it will ay getName is not a function , code will not run
+getName();
+    console.log(getName);
+    console.log(getName2)
+    getName2()
+    function getName(){
+        console.log("i am Normal function")
+    }
 
-// var x = 1;
-// console.log(getName);
-
-// var getName = ()=>{
-//     console.log("Welcome");
-// }
-// var getName2 = function (){
-
-// }
+    const getName2 = ()=>{
+        console.log("i am arrow function")
+    }
 // // getName and  getName2 will behave same . They both are variable . just two different way of making functions.
 
 // console.log(getName);

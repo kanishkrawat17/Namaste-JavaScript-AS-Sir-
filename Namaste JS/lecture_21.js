@@ -34,7 +34,7 @@ function isEven(x){
 // reduce -> its has a function which takes accumulator and current, reduce takes one more parameter which
 // is used to assign the value to accumulator.
 
-// Accumulator -> it just accumulates all the values of givern array 
+// Accumulator -> it just accumulates all the values of given array 
 //  current -> represents the value of individual elt of array.
 
 

@@ -12,8 +12,64 @@
     <button>Click</button>
     <h1>P tag</h1>
     <button>LOgin</button>
+    <script>
+
+        const btn = document.getElementById("click");
+        function click(){
+            var i = 0; 
+            btn.addEventListener("click" , function(){
+                console.log("Button is clicked" , ++i);
+            })
+        }
+        click();
+
+        
+        
+
+
+       
+
     
+    </script>
     <!-- <script src="lecture_4.js" ></script> -->
-    <script src="./Objects.js"></script>
+    <!-- <script src="./Objects.js"></script> -->
 </body>
 </html>
+
+
+ <!-- BLOCK SCOPE AND FUNCTION SCOPE -->
+<!-- {
+    var a = 2;
+    let v  =23
+    const d=23
+}
+
+function abc(){
+    let v  = 23;
+    var b = 2123;
+    a=10000
+    console.log(b);
+    console.log(a);
+}
+abc();
+console.log(a)
+
+// Block : 
+//     v , d
+// abc() :
+//     v , b
+// Global : 
+//     a  -->
+
+
+
+<!-- // for(var i = 1 ; i < 5 ; i++){
+
+    //     close(i)
+    //     function close(x){
+    //         setTimeout(function(){
+    //             console.log(x);
+    //         },x*1000)
+    //     }
+
+    // } -->
