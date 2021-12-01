@@ -1,0 +1,70 @@
+<!-- Event capturing and Event bubbling  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event capturing and Event bubbling</title>
+    <style>
+        div{
+            min-width: 10rem;
+            min-height: 10rem;
+            border: 1px solid;
+            padding:2rem
+        }
+        /* #grandParent{
+            width: 10rem;
+            height: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+        }
+
+        #parent{
+            width: 8rem;
+            height: 8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+        }
+
+        #child{
+            width: 6rem;
+            height: 6rem;
+            background-color: blue;
+
+        } */
+    </style>
+</head>
+<body>
+    <div id="grandParent"> 
+        <div id="parent">
+            <div id="child"></div>
+        </div>
+    </div>
+    <script>
+        let grandParent = document.getElementById('grandParent');
+        let parent = document.getElementById('parent');
+        let child = document.getElementById('child');
+
+            // false -> bubbling , default
+            // true -> capturing
+            
+        grandParent.addEventListener('click', ()=>{
+            console.log("GrandParent is clicked")
+        },false) //  bubbling -> false , by default false 
+
+        parent.addEventListener('click', ()=>{
+            console.log("parent is clicked")
+        },true) // capturing -> true
+
+        child.addEventListener('click', (e)=>{
+            console.log("child is clicked")
+            e.stopPropagation();
+        },true) 
+    </script>
+</body>
+</html>

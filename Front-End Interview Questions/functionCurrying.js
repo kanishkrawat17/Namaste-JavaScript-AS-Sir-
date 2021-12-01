@@ -39,4 +39,24 @@
 //     console.log(params); 
 // }
 
+// -----------------Multiply Function Currying ------------------------------------
+// function multiply(x,y){
+//     console.log(x*y);
+// }
 
+// let multiplybythree =  multiply.bind(this, 3,4);
+// multiplybythree(10)
+
+// let multiplybyfour = multiply.bind(this,4 );
+// multiplybyfour(20);
+// ------------------------------------------------------
+// This is another way of doing function currying using closures.
+ 
+let multiply = function (x){
+    return function(y){
+        console.log(x*y);
+    }
+}
+
+let multiplyByThree = multiply(3);
+multiplyByThree(10);

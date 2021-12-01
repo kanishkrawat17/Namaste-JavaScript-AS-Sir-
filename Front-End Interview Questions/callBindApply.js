@@ -3,9 +3,12 @@ let person1 = {
     lastName : "Rawat",
 }
 
+
+//In this function this will start pointing to the obj that is being passed as an argument
  function fullname(city,age){
-    console.log(this.firstName+" "+this.lastName+ " "+ city+ " "+age);
+    console.log(this.firstName+" "+this.lastName+ " "+ city+ " "+age); 
 }
+
 let person2 = {
     firstName : "Rahul",
     lastName : "Dravid"

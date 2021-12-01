@@ -1,0 +1,47 @@
+import React from "react";
+import axios from 'axios';
+
+export default function App() {
+  const [city, setCity] =  useState("");
+  const [name, setName] =  useState("");
+
+  const handleNameInput = (e)=>{
+    setName(e.target.value);
+  }
+
+  const handleCityInput = (e)=>{
+    setCity(e.target.value);
+  }
+
+  const handlePost = (e)=>{
+    e.preventDefault();
+    let data = {
+      name,city
+    }
+    fetch('https://reqres.in/api/users', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+    .then((res)=>res.json())
+    .then((data)=>console.log(data))
+    .catch((err)=>console.log(err.message))
+    
+  }
+  const handleGet = (e)=>{
+      axios.get('https://reqres.in/api/users')
+        .then((res)=>console.log(res.data))
+        .catch((err)=>console.log(err.message))
+    
+  }
+
+  return (
+
+    <div>
+      <input value = {name} onChange = {handleNameInput} type= "text" placeholder = "name.."/>
+      <input onChange = {handleCityInput} type= "text" placeholder = "city.."/>
+      <button onClick = {handlePost}>POST</button>
+      <button onClick = {handleGet}>GET</button>
+    </div>
+  );
+}
+

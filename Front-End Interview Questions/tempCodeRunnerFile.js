@@ -13,8 +13,8 @@
 
 // //----------------------------------------------
 // // Flatten an object : -
-//   let result  = {};
-//   let keyName = "user";
+  let result  = {};
+  let keyName = "user";
 
   const flattenObj = function(user, keyName){
     Object.keys(user).forEach((key)=>{
@@ -56,27 +56,15 @@
 //    }
 // }
 
-// function test(){
-//     setTimeout(()=>{
-//         console.log(`I'm a callback function`)
-//     },1000);
-// }
-// test()
-
-// ********************* flat an array ************************
-let arr = [1,2,3,[4,5,6],[3,4,5]];
-let result = [];
-
-function flatAnArr(arr){
-  for(let i = 0 ; i < arr.length ; i++){
-    if(typeof arr[i] == 'object'){
-      flatAnArr(arr[i]);
-    } else{
-      result.push(arr[i]);
+var user = {
+    name: "Vishal",
+    address: {
+      primary: {
+        house: "109",
+        street: {             
+          main: "21",
+          cross: "32"
+        }
+      }
     }
   }
-  return result;
-}
-
-let ans = flatAnArr(arr);
-console.log(ans);

@@ -1,11 +1,11 @@
-// let person = {
-//     firstName : "Kanishk",
-//     lastName : "Rawat"
-// }
+let person = {
+    firstName : "Kanishk",
+    lastName : "Rawat"
+}
 
-// let fullName = function(city,c){
-//     console.log(this.firstName+" "+this.lastName+ ", "+ city+c);
-// }
+let fullName = function(city,c){
+    console.log(this.firstName+" "+this.lastName+ ", "+ city+c);
+}
 
 
 // // let printMyName = fullName.bind(person);
@@ -15,22 +15,20 @@
 // // Function.prototype -> Function protoype that we are making as function prototype , will be accessible by 
 // // every function.
 
-// Function.prototype.myBind = function(...args){
-//     console.log(this); // args is an array
+Function.prototype.myBind = function(...args){  // args is an array
+    console.log(this);
+    let fun  = this; // this-> points to fullName Function inside here
+    let object = args[0];
+    params = args.slice(1); // this is an array
+    return function(...args){
+        let p = args;
+        fun.call(object,...params,...p);
+    }
+}
 
-//     let fun  = this; // this-> points to printName Function inside here
-//     let object = args[0];
-//     params = args.slice(1); //this is an array
-//     return function(...args){
-//         let p = args;
-//         fun.call(object,...params,...p);
-//     }
-
-// }
-
-// let returedFunByBind = fullName.myBind(person,"Delhi");
-// // console.log(returedFunByBind);
-// returedFunByBind("Delhiiii")
+let returedFunByBind = fullName.myBind(person,"Delhi");
+// console.log(returedFunByBind);
+returedFunByBind("Delhiiii")
 
 
 
@@ -53,7 +51,7 @@ function intro(eat,bark){
 intro.call(dog);
 // Why this in intro fun points to dog object?  This is because of using call function an object(dog) is passed in call(dog)
 // in case if we call intro simply like this -> intro() , now console.log(this); inside intro will give a global object
-// in case if we calllike this ->   intro.call(dog);  now console.log(this); inside intro will give a dog object.
+// in case if we call like this ->   intro.call(dog);  now console.log(this); inside intro will give a dog object.
 
 Function.prototype.myBind = function(obj,...args){
    console.log(args);

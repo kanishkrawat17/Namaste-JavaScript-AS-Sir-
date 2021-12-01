@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let counter = 0
+        // const expensive = ()=>{
+        //     console.log("Expensive",++counter)
+        // }
+
+        // let flag =  true;
+        // const throttled = (expensive , limit)=>{
+        //     return function (){
+        //         if(flag){
+        //             expensive();
+        //             flag = false;
+        //             setTimeout(()=>{
+        //                 flag = true;
+        //             }, limit)
+        //         }
+        //     }
+        // }
+        // const betterFunction = throttled(expensive , 3000);
+
+        // window.addEventListener("resize", betterFunction)
+        function  betterFn (cb, delay) {
+            let flag  =  true
+            return function (){
+                if(flag == true){
+                    cb()
+                    flag = false;
+                    setTimeout(()=>{
+                        flag = true
+                    }, delay)
+                } 
+            }
+        }
+        function cb(){
+            console.log("DATA FETCHING.....!!")
+        }
+        window.addEventListener("resize", betterFn(cb , 2000));
+
+    </script>
+</body>
+</html>
