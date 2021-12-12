@@ -1,20 +1,20 @@
-// var user = {
-//     name: "Vishal",
-//     address: {
-//       primary: {
-//         house: "109",
-//         street: {             
-//           main: "21",
-//           cross: "32"
-//         }
-//       }
-//     }
-//   };
+var user = {
+    name: "Vishal",
+    address: {
+      primary: {
+        house: "109",
+        street: {             
+          main: "21",
+          cross: "32"
+        }
+      }
+    }
+  };
 
 // //----------------------------------------------
 // // Flatten an object : -
-//   let result  = {};
-//   let keyName = "user";
+  let result  = {};
+  let keyName = "user";
 
   const flattenObj = function(user, keyName){
     Object.keys(user).forEach((key)=>{
