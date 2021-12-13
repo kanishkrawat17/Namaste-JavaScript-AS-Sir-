@@ -1,5 +1,3 @@
-const { remove } = require("cheerio/lib/api/manipulation");
-
 let str = "hello";
 
 function removeVowels(str){
